@@ -1,0 +1,10 @@
+<div class="page">
+	<app-back-button></app-back-button>
+	<div class="centered-container">
+		<h1>Here's Your Shopping List</h1>
+		<p *ngIf="isLoading">Loading...</p>
+		<ng-container *ngIf="!isLoading">
+			<p *ngFor="let item of shoppingListItems">{{ item }}</p>
+		</ng-container>
+	</div>
+</div>

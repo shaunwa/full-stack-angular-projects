@@ -1,0 +1,13 @@
+<div>
+	<h3>Shared with:</h3>
+	<div *ngFor="let email of emails">
+		<p>{{ email }}</p>
+	</div>
+	<div class="share-with-form">
+		<input
+			type="text"
+			placeholder="Enter an email address to share with"
+			[(ngModel)]="inviteEmailValue" />
+		<button (click)="onShare()">Share</button>
+	</div>
+</div>

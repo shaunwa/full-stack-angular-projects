@@ -1,0 +1,20 @@
+<div class="centered-container">
+	<h1>Upload a New Photo</h1>
+	<label>
+		Title:
+		<input
+			type="text"
+			placeholder="Enter a title for the new photo"
+			class="full-width space-after"
+			[(ngModel)]="titleValue" />
+	</label>
+	<input
+		type="file"
+		class="full-width space-after"
+		accept="image/png, image/jpeg"
+		(change)="onFileSelect($event)" />
+	<button
+		class="full-width"
+		(click)="onClickUpload()"
+	>Upload</button>
+</div>

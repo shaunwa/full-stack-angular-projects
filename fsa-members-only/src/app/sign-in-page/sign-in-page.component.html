@@ -1,0 +1,20 @@
+<div class="full-height-page">
+	<div class="centered-container space-before">
+		<div *ngIf="errorMessage">
+			<p class="error-message">{{ errorMessage }}</p>
+		</div>
+		<input
+			type="text"
+			placeholder="Email Address"
+			class="full-width space-after"
+			[(ngModel)]="emailValue" />
+		<input
+			type="password"
+			placeholder="Password"
+			class="full-width space-after"
+			[(ngModel)]="passwordValue" />
+		<button
+			class="full-width"
+			(click)="onClickSignIn()">Sign In</button>
+	</div>
+</div>

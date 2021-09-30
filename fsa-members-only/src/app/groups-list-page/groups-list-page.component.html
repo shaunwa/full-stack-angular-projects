@@ -1,0 +1,13 @@
+<div class="centered-container">
+	<h1 class="section-heading">My Groups</h1>
+	<app-my-groups-list
+		[isLoading]="isLoading"
+		[groups]="userGroups"></app-my-groups-list>
+	<h1 class="section-heading">Other Groups</h1>
+	<app-groups-list
+		[isLoading]="isLoading"
+		[groups]="notUserGroups"></app-groups-list>
+	<a routerLink="/create-group">
+		<button>Create New Group</button>
+	</a>
+</div>

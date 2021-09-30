@@ -1,0 +1,24 @@
+{
+  "name": "fsa-back-end-template",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "npx nodemon --exec 'npx babel-node src/server.js'"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "7.15.0",
+    "@babel/node": "7.14.9",
+    "@babel/preset-env": "7.15.0",
+    "nodemon": "2.0.12"
+  },
+  "dependencies": {
+    "axios": "0.21.4",
+    "express": "4.17.1",
+    "mongodb": "4.1.0"
+  }
+}

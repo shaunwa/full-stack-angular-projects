@@ -1,0 +1,19 @@
+<div class="page-container">
+	<div class="column">
+		<app-meals-list
+			[isLoading]="isLoadingMeals"
+			[meals]="meals"
+			(deleteMeal)="onDeleteMeal($event)"></app-meals-list>
+	</div>
+	<div class="column">
+		<app-ingredients-list
+			[isLoading]="isLoadingIngredients"
+			[ingredients]="ingredients"
+			(deleteIngredient)="onDeleteIngredient($event)"></app-ingredients-list>
+		<a routerLink="/shopping-list">
+			<button
+				class="shopping-list-button list-container full-width"
+			>Generate Shopping List</button>
+		</a>
+	</div>
+</div>

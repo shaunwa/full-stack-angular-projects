@@ -1,0 +1,16 @@
+<div class="list-container">
+	<h1>Ingredients</h1>
+	<p *ngIf="isLoading">Loading...</p>
+	<ng-container *ngIf="!isLoading">
+		<div class="list-item" *ngFor="let ingredient of ingredients">
+			<h3>{{ ingredient.name }}</h3>
+			<p>{{ ingredient.amount }} {{ ingredient.units }}</p>
+			<div class="right-action">
+				<app-small-x (click)="onDelete(ingredient.name)"></app-small-x>
+			</div>
+		</div>
+	</ng-container>
+	<a routerLink="/add-ingredient">
+		<button class="space-before">+ Add Ingredient</button>
+	</a>
+</div>

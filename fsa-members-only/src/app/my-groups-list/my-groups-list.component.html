@@ -1,0 +1,12 @@
+<p *ngIf="isLoading">Loading...</p>
+<ng-container *ngIf="!isLoading">
+	<div class="list-item" *ngFor="let group of groups">
+		<div class="list-item-data">
+			<a routerLink="/groups/{{ group.id }}">
+				<h3>{{ group.name }}</h3>
+			</a>
+			<p>Owned by: {{ group.owner.fullName }}</p>
+			<p>{{ group.members.length }} member(s)</p>
+		</div>
+	</div>
+</ng-container>

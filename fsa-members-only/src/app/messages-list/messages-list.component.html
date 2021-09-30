@@ -1,0 +1,10 @@
+<h2 class="section-heading">Messages</h2>
+<ng-container *ngIf="messages.length > 0">
+	<div *ngFor="let message of messages" class="list-item">
+		<div class="list-item-data">
+			<h3>{{ message.userName }}</h3>
+			<p>{{ message.text }}</p>
+		</div>
+	</div>
+</ng-container>
+<p *ngIf="messages.length === 0">No messages in this group yet</p>

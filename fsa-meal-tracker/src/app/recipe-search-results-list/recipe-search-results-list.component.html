@@ -1,0 +1,5 @@
+<div *ngFor="let recipe of recipes" class="search-list-item" (click)="addMealWithRecipe(recipe.id)">
+	<h3>{{ recipe.name }}</h3>
+	<p *ngIf="getMissingIngredients(recipe).length === 0">You have all the required ingredients!</p>
+	<p *ngIf="getMissingIngredients(recipe).length > 0">You're missing {{ getMissingIngredients(recipe).length }} ingredient(s)</p>
+</div>

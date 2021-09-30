@@ -1,0 +1,9 @@
+<p *ngIf="isLoading">Loading...</p>
+<div *ngIf="!isLoading" class="photos-list">
+	<a *ngFor="let photo of photos" routerLink="/photos/{{ photo._id }}">
+		<div class="photos-list-item-wrap">
+			<img class="photos-list-item" src="http://localhost:8080{{ photo.url }}" height="200" width="200" />
+		</div>
+	</a>
+	<app-new-photo-button></app-new-photo-button>
+</div>

@@ -1,0 +1,23 @@
+<div class="centered-container">
+	<h1>New Conversation</h1>
+	<input
+		type="text"
+		placeholder="Enter a name for your conversation here"
+		class="full-width"
+		[(ngModel)]="nameValue" />
+	<h3>Add Members</h3>
+	<div *ngFor="let user of users" class="list-item new-conversation-list-item">
+		<p>{{ user.name }}</p>
+		<div *ngIf="memberIds.includes(user.id) || user.id === currentUser?.uid; then disabledButton else regularButton"></div>
+		<ng-template #disabledButton>
+			<button disabled>Added!</button>
+		</ng-template>
+		<ng-template #regularButton>
+			<button (click)="addMemberId(user.id)">Add</button>
+		</ng-template>
+	</div>
+	<button
+		class="full-width space-before"
+		(click)="createConversation()"
+	>Create Conversation</button>
+</div>

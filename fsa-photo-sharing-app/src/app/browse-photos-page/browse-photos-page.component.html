@@ -1,0 +1,10 @@
+<div>
+	<h2 class="section-heading">My Photos</h2>
+	<app-my-photos-list
+		[isLoading]="isLoadingMyPhotos"
+		[photos]="myPhotos"></app-my-photos-list>
+	<h2 class="section-heading">Shared With Me</h2>
+	<app-photos-list
+		[isLoading]="isLoadingSharedPhotos"
+		[photos]="sharedPhotos"></app-photos-list>
+</div>

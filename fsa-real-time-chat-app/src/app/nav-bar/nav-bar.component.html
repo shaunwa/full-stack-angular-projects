@@ -1,0 +1,13 @@
+<nav>
+	<a routerLink="/">
+		<h1 class="app-heading">Real-Time Chat App</h1>
+	</a>
+	<ng-container *ngIf="auth.user | async as user">
+		<button
+			class="sign-out-button"
+			(click)="onClickSignOut()">Sign Out</button>
+		<p
+			class="logged-in-as space-before"
+		>Logged in as {{ user.email }}</p>
+	</ng-container> 
+</nav>

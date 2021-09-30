@@ -1,0 +1,13 @@
+<div class="centered-container">
+	<div *ngFor="let message of messages" class="list-item">
+		<h3>{{ message.postedBy.name }}</h3>
+		<p>{{ message.text }}</p>
+	</div>
+	<div class="input-form">
+		<input
+			type="text"
+			placeholder="Enter a new message here"
+			[(ngModel)]="messageInputValue" />
+		<button (click)="postMessage()">Send</button>
+	</div>
+</div>

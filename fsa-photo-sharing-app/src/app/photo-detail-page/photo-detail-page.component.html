@@ -1,0 +1,10 @@
+<p *ngIf="isLoading">Loading...</p>
+<div *ngIf="!isLoading" class="centered-contanier">
+	<h1>{{ photo!.title }}</h1>
+	<img src="http://localhost:8080{{ photo!.url }}" width="750" />
+	<div *ngIf="photo!.sharedWithEmails">
+		<app-shared-emails-list
+			[emails]="photo!.sharedWithEmails"
+			(share)="shareWithEmail($event)"></app-shared-emails-list>
+	</div>
+</div>

@@ -1,0 +1,24 @@
+<div class="list-container">
+	<h1>Planned Meals</h1>
+	<p *ngIf="isLoading">Loading...</p>
+	<ng-container *ngIf="!isLoading">
+		<div class="list-item" *ngFor="let date of next7Days; index as i">
+			<ng-container *ngIf="mealsForDays[i]">
+				<h3>{{ date.getDate() }}</h3>
+				<p>{{ mealsForDays[i]!.recipe.name }} </p>
+				<div class="right-action">
+					<app-small-x (click)="onDelete(mealsForDays[i]!._id)"></app-small-x>
+				</div>
+			</ng-container>
+			<ng-container *ngIf="!mealsForDays[i]">
+				<h3>{{ date.getDate() }}</h3>
+				<p>No meal planned</p>
+				<div class="right-action">
+					<a routerLink="/recipes" [queryParams]="{ date: date.toString() }">
+						<button>Add</button>
+					</a>
+				</div>
+			</ng-container>
+		</div>
+	</ng-container>
+</div>

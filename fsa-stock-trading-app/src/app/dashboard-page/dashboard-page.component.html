@@ -1,0 +1,25 @@
+<p *ngIf="isLoading">Loading...</p>
+<ng-container *ngIf="!isLoading">
+	<h1 class="section-heading">Stock Trading App</h1>
+	<div class="centered-container">
+		<app-stock-chart
+			[xValues]="times"
+			[yValues]="prices"
+		></app-stock-chart>
+		<div class="financial-info-section">
+			<div class="info-item">Current TSLA Share Price: {{ currentPrice }}</div>
+			<div class="info-item">You currently own {{ portfolioData!.numberOfShares }} shares</div>
+			<div class="info-item">Cash Balance: ${{ portfolioData!.cashValue }}</div>
+			<div class="info-item">Portfolio Value: ${{ portfolioData!.sharesValue }}</div>
+			<div class="info-item">Total Value: ${{ portfolioData!.cashValue + portfolioData!.sharesValue }}</div>
+			<input
+				type="number"
+				class="full-width space-after"
+				[(ngModel)]="numberOfSharesValue" />
+			<div>
+				<button class="buy-button" (click)="buyShares()">Buy</button>
+				<button class="sell-button" (click)="sellShares()">Sell</button>
+			</div>
+		</div>
+	</div>
+</ng-container>

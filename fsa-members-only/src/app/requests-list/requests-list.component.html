@@ -1,0 +1,8 @@
+<h2 class="section-heading">Join Requests</h2>
+<ng-container *ngIf="requests.length > 0">
+	<div *ngFor="let request of requests">
+		<h3>{{ request.userName }}</h3>
+		<button (click)="onClickAccept(request.id)">Accept</button>
+		<button (click)="onClickReject(request.id)">Reject</button>
+	</div>
+</ng-container>
